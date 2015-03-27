@@ -1,0 +1,85 @@
+zstyle ':prompt:grml:left:setup' items jobs path vcs newline user at host percent
+alias cdbase='export CDPATH=$(pwd)'
+alias gallery='shotwell'
+
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+
+export PATH="/home/solstice/.installdir:$PATH"
+
+# vi stuff
+bindkey -v
+
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+zle -N zle-line-init
+export KEYTIMEOUT=1
+#
+# wallpaper thing
+ROOT_WALLPAPER='off'
+sudo() {
+
+
+	TRAPEXIT() {
+
+		results=$(for i in `pgrep zsh`; do ps -u root | grep $i; done)
+		if [ -z $results ]; then
+			ROOT_WALLPAPER='off'
+			feh --bg-center /home/solstice/Pictures/wallpapers/odin.jpg
+		fi
+	}
+
+		
+	if [[ $@ == "-s" ]]; then
+		if [[ $ROOT_WALLPAPER == 'off' ]]; then
+			ROOT_WALLPER='on'
+			feh --bg-center /home/solstice/Pictures/wallpapers/odin-red.png
+		fi
+	elif [[ $@ == "-i" ]]; then
+		if [[ $ROOT_WALLPAPER == 'off' ]]; then
+			feh --bg-center /home/solstice/Pictures/wallpapers/odin-red.png
+		fi
+	fi
+	command sudo "$@"
+
+
+}
+
+
+alias mkdir='mkdir -p'
+alias giddit='git pull'
+alias pushit='git push'
+alias lsa='ls -halt'
+alias cls='clear'
+alias ls='ls -h --color=auto'
+alias rm='rm -i'
+alias rmf='rm'
+
+cl() {
+
+	dir=$1
+	if [[ -z "$dir" ]]; then
+		dir=$HOME;
+	fi
+	if [[ -d "$dir" ]]; then
+		cd "$dir";
+		lsa;
+	else
+		echo "bash: cl: '$dir': Directory not found";
+	fi
+}
