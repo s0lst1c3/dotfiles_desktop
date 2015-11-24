@@ -83,3 +83,22 @@ cl() {
 		echo "bash: cl: '$dir': Directory not found";
 	fi
 }
+
+#
+# RADIO!!! XD
+alias wonderground="mplayer http://wondergroundstream2.publicradio.org/wonderground" # MPR Wonderground Windows Media 
+alias choral="mplayer -playlist http://choralstream1.publicradio.org/choral.m3u" # Clasical MPR Choral
+alias wefunk="mplayer -playlist http://www.wefunkradio.com/play/shoutcast.pls" # WEFUNK Radio MP3 64K
+alias sleepbot="mplayer -playlist http://sleepbot.com/ambience/cgi/listen.cgi/listen.pls" # Sleepbot Environmental Broadcast 56K MP3
+alias groovesalad="mplayer -playlist http://somafm.com/groovesalad130.pls" # Soma FM Groove Salad iTunes AAC 128K
+alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM Drone Zone iTunes AAC 128K
+alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
+alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
+alias thistle="mplayer -playlist http://somafm.com/thistle.pls" # Soma FM Sonic Universe iTunes AAC 128K
+alias bootliquor="mplayer -playlist http://somafm.com/bootliquor.pls" # Soma FM Sonic Universe iTunes AAC 128K
+alias beatblender="mplayer -playlist http://somafm.com/beatblender.pls" # Soma FM Sonic Universe iTunes AAC 128K
+alias thetrip="mplayer -playlist http://somafm.com/thetrip.pls" # Soma FM Sonic Universe iTunes AAC 128K
+alias cliqhop="mplayer -playlist http://somafm.com/cliqhop.pls" # Soma FM Sonic Universe iTunes AAC 128K
+alias defcon="mplayer -playlist http://somafm.com/defcon.pls" # Soma FM Sonic Universe iTunes AAC 128K
+alias dubstep="mplayer -playlist http://somafm.com/dubstep.pls" # Soma FM Sonic Universe iTunes AAC 128K
+
