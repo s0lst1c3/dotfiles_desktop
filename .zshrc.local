@@ -1,6 +1,5 @@
 zstyle ':prompt:grml:left:setup' items jobs path vcs newline user at host percent
 alias cdbase='export CDPATH=$(pwd)'
-alias gallery='shotwell'
 
 alias ..="cd .."
 alias ..2="cd ../.."
@@ -14,11 +13,8 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-export PATH="/home/solstice/.installdir:$PATH"
-
 # vi stuff
 bindkey -v
-
 
 bindkey '^P' up-history
 bindkey '^N' down-history
@@ -29,41 +25,9 @@ bindkey '^r' history-incremental-search-backward
 
 zle -N zle-line-init
 export KEYTIMEOUT=1
-#
-# wallpaper thing
-ROOT_WALLPAPER='off'
-sudo() {
-
-
-	TRAPEXIT() {
-
-		results=$(for i in `pgrep zsh`; do ps -u root | grep $i; done)
-		if [ -z $results ]; then
-			ROOT_WALLPAPER='off'
-			feh --bg-center /home/solstice/Pictures/wallpapers/odin.jpg
-		fi
-	}
-
-		
-	if [[ $@ == "-s" ]]; then
-		if [[ $ROOT_WALLPAPER == 'off' ]]; then
-			ROOT_WALLPER='on'
-			feh --bg-center /home/solstice/Pictures/wallpapers/odin-red.png
-		fi
-	elif [[ $@ == "-i" ]]; then
-		if [[ $ROOT_WALLPAPER == 'off' ]]; then
-			feh --bg-center /home/solstice/Pictures/wallpapers/odin-red.png
-		fi
-	fi
-	command sudo "$@"
-
-
-}
 
 
 alias mkdir='mkdir -p'
-alias giddit='git pull'
-alias pushit='git push'
 alias lsa='ls -halt'
 alias cls='clear'
 alias ls='ls -h --color=auto'
@@ -83,22 +47,4 @@ cl() {
 		echo "bash: cl: '$dir': Directory not found";
 	fi
 }
-
-#
-# RADIO!!! XD
-alias wonderground="mplayer http://wondergroundstream2.publicradio.org/wonderground" # MPR Wonderground Windows Media 
-alias choral="mplayer -playlist http://choralstream1.publicradio.org/choral.m3u" # Clasical MPR Choral
-alias wefunk="mplayer -playlist http://www.wefunkradio.com/play/shoutcast.pls" # WEFUNK Radio MP3 64K
-alias sleepbot="mplayer -playlist http://sleepbot.com/ambience/cgi/listen.cgi/listen.pls" # Sleepbot Environmental Broadcast 56K MP3
-alias groovesalad="mplayer -playlist http://somafm.com/groovesalad130.pls" # Soma FM Groove Salad iTunes AAC 128K
-alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM Drone Zone iTunes AAC 128K
-alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
-alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
-alias thistle="mplayer -playlist http://somafm.com/thistle.pls" # Soma FM Sonic Universe iTunes AAC 128K
-alias bootliquor="mplayer -playlist http://somafm.com/bootliquor.pls" # Soma FM Sonic Universe iTunes AAC 128K
-alias beatblender="mplayer -playlist http://somafm.com/beatblender.pls" # Soma FM Sonic Universe iTunes AAC 128K
-alias thetrip="mplayer -playlist http://somafm.com/thetrip.pls" # Soma FM Sonic Universe iTunes AAC 128K
-alias cliqhop="mplayer -playlist http://somafm.com/cliqhop.pls" # Soma FM Sonic Universe iTunes AAC 128K
-alias defcon="mplayer -playlist http://somafm.com/defcon.pls" # Soma FM Sonic Universe iTunes AAC 128K
-alias dubstep="mplayer -playlist http://somafm.com/dubstep.pls" # Soma FM Sonic Universe iTunes AAC 128K
 
